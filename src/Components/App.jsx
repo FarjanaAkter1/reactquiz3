@@ -1,3 +1,5 @@
+import { Nav } from '../Nav';
+
 import '../App.css';
 import { HomePage } from '../Pages/HomePage';
 import { LoginPage } from '../Pages/LoginPage';
@@ -8,6 +10,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <Nav/>
         <Routes>
           <Route path='/' element={<LoginPage />}/>
           <Route path='/home' element={<HomePage />}/>

@@ -42,11 +42,17 @@ export const TodoList = () => {
 
   const handleDeleteTodo = (index) => {
     // filter out the todo that was deleted from the array - hint: keep the rest of the todos in an array
-
+    
+      setTodos(todos.filter((todo) => todo.id !== id));
+    };
     // update todos array
   };
   
   const handleLogout = () => {
+
+    
+      localStorage.removeItem("authToken");
+
     // Clear token from localStorage
     
     // route user back to sign in page
@@ -61,8 +67,14 @@ export const TodoList = () => {
       <button onClick={handleAddTodo}>Add to your list</button>
       <h3>To do:</h3>
       <ul id="todo-list">
-        {/* Use map to return the todos here :) */}
+        { todo?.map((todo, index) => {
+          return(
+            <li key={index}>
+              {todo}}
       </ul>
+
+  )
+})}
       <button id="get-friends-btn" onClick={handleFetchFriends}>Get friends list</button>
       <h3>Your active friends: </h3>
       <ul id="friends-list">
